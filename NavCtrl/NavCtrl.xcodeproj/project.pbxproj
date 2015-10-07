@@ -23,6 +23,25 @@
 		48A656E718163C1B00746D36 /* qcdDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A656E518163C1B00746D36 /* qcdDemoViewController.xib */; };
 		48A656EB18163F8700746D36 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656E918163F8700746D36 /* ChildViewController.m */; };
 		48A656EE1816468000746D36 /* Sunflower.gif in Resources */ = {isa = PBXBuildFile; fileRef = 48A656ED1816468000746D36 /* Sunflower.gif */; };
+		D06838DA1BC43FD900D50E3F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D06838D81BC43FD900D50E3F /* WebViewController.m */; };
+		D06838DB1BC43FD900D50E3F /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06838D91BC43FD900D50E3F /* WebViewController.xib */; };
+		D06838DD1BC44CD300D50E3F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06838DC1BC44CD300D50E3F /* WebKit.framework */; };
+		D068390E1BC5B3EF00D50E3F /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = D06838FE1BC5B3EF00D50E3F /* Apple.png */; };
+		D068390F1BC5B3EF00D50E3F /* g4.png in Resources */ = {isa = PBXBuildFile; fileRef = D06838FF1BC5B3EF00D50E3F /* g4.png */; };
+		D06839101BC5B3EF00D50E3F /* GPad.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839001BC5B3EF00D50E3F /* GPad.png */; };
+		D06839111BC5B3EF00D50E3F /* HTC-One.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839011BC5B3EF00D50E3F /* HTC-One.png */; };
+		D06839121BC5B3EF00D50E3F /* HTC.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839021BC5B3EF00D50E3F /* HTC.png */; };
+		D06839131BC5B3EF00D50E3F /* ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839031BC5B3EF00D50E3F /* ipad.png */; };
+		D06839141BC5B3EF00D50E3F /* iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839041BC5B3EF00D50E3F /* iphone.png */; };
+		D06839151BC5B3EF00D50E3F /* ipod.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839051BC5B3EF00D50E3F /* ipod.png */; };
+		D06839161BC5B3EF00D50E3F /* LG.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839061BC5B3EF00D50E3F /* LG.png */; };
+		D06839171BC5B3EF00D50E3F /* nexus9.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839071BC5B3EF00D50E3F /* nexus9.png */; };
+		D06839181BC5B3EF00D50E3F /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839081BC5B3EF00D50E3F /* note.png */; };
+		D06839191BC5B3EF00D50E3F /* RE.png in Resources */ = {isa = PBXBuildFile; fileRef = D06839091BC5B3EF00D50E3F /* RE.png */; };
+		D068391A1BC5B3EF00D50E3F /* s4.png in Resources */ = {isa = PBXBuildFile; fileRef = D068390A1BC5B3EF00D50E3F /* s4.png */; };
+		D068391B1BC5B3EF00D50E3F /* Samsung.png in Resources */ = {isa = PBXBuildFile; fileRef = D068390B1BC5B3EF00D50E3F /* Samsung.png */; };
+		D068391C1BC5B3EF00D50E3F /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = D068390C1BC5B3EF00D50E3F /* tab.png */; };
+		D068391D1BC5B3EF00D50E3F /* v10.png in Resources */ = {isa = PBXBuildFile; fileRef = D068390D1BC5B3EF00D50E3F /* v10.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +77,26 @@
 		48A656E818163F8700746D36 /* ChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
 		48A656E918163F8700746D36 /* ChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
 		48A656ED1816468000746D36 /* Sunflower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sunflower.gif; sourceTree = "<group>"; };
+		D06838D71BC43FD900D50E3F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		D06838D81BC43FD900D50E3F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		D06838D91BC43FD900D50E3F /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		D06838DC1BC44CD300D50E3F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D06838FE1BC5B3EF00D50E3F /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple.png; sourceTree = "<group>"; };
+		D06838FF1BC5B3EF00D50E3F /* g4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = g4.png; sourceTree = "<group>"; };
+		D06839001BC5B3EF00D50E3F /* GPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPad.png; sourceTree = "<group>"; };
+		D06839011BC5B3EF00D50E3F /* HTC-One.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HTC-One.png"; sourceTree = "<group>"; };
+		D06839021BC5B3EF00D50E3F /* HTC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HTC.png; sourceTree = "<group>"; };
+		D06839031BC5B3EF00D50E3F /* ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipad.png; sourceTree = "<group>"; };
+		D06839041BC5B3EF00D50E3F /* iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone.png; sourceTree = "<group>"; };
+		D06839051BC5B3EF00D50E3F /* ipod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipod.png; sourceTree = "<group>"; };
+		D06839061BC5B3EF00D50E3F /* LG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LG.png; sourceTree = "<group>"; };
+		D06839071BC5B3EF00D50E3F /* nexus9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nexus9.png; sourceTree = "<group>"; };
+		D06839081BC5B3EF00D50E3F /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		D06839091BC5B3EF00D50E3F /* RE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RE.png; sourceTree = "<group>"; };
+		D068390A1BC5B3EF00D50E3F /* s4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s4.png; sourceTree = "<group>"; };
+		D068390B1BC5B3EF00D50E3F /* Samsung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Samsung.png; sourceTree = "<group>"; };
+		D068390C1BC5B3EF00D50E3F /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab.png; sourceTree = "<group>"; };
+		D068390D1BC5B3EF00D50E3F /* v10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v10.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06838DD1BC44CD300D50E3F /* WebKit.framework in Frameworks */,
 				48A656B718163BF200746D36 /* CoreGraphics.framework in Frameworks */,
 				48A656B918163BF200746D36 /* UIKit.framework in Frameworks */,
 				48A656B518163BF200746D36 /* Foundation.framework in Frameworks */,
@@ -89,6 +129,9 @@
 			children = (
 				48A656E318163C1B00746D36 /* qcdDemoViewController.h */,
 				48A656E418163C1B00746D36 /* qcdDemoViewController.m */,
+				D06838D71BC43FD900D50E3F /* WebViewController.h */,
+				D06838D81BC43FD900D50E3F /* WebViewController.m */,
+				D06838D91BC43FD900D50E3F /* WebViewController.xib */,
 				48A656E818163F8700746D36 /* ChildViewController.h */,
 				48A656E918163F8700746D36 /* ChildViewController.m */,
 				48A656E518163C1B00746D36 /* qcdDemoViewController.xib */,
@@ -111,6 +154,7 @@
 		48A656B318163BF200746D36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D06838DC1BC44CD300D50E3F /* WebKit.framework */,
 				48A656B418163BF200746D36 /* Foundation.framework */,
 				48A656B618163BF200746D36 /* CoreGraphics.framework */,
 				48A656B818163BF200746D36 /* UIKit.framework */,
@@ -133,6 +177,22 @@
 		48A656BB18163BF200746D36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D06838FE1BC5B3EF00D50E3F /* Apple.png */,
+				D06838FF1BC5B3EF00D50E3F /* g4.png */,
+				D06839001BC5B3EF00D50E3F /* GPad.png */,
+				D06839011BC5B3EF00D50E3F /* HTC-One.png */,
+				D06839021BC5B3EF00D50E3F /* HTC.png */,
+				D06839031BC5B3EF00D50E3F /* ipad.png */,
+				D06839041BC5B3EF00D50E3F /* iphone.png */,
+				D06839051BC5B3EF00D50E3F /* ipod.png */,
+				D06839061BC5B3EF00D50E3F /* LG.png */,
+				D06839071BC5B3EF00D50E3F /* nexus9.png */,
+				D06839081BC5B3EF00D50E3F /* note.png */,
+				D06839091BC5B3EF00D50E3F /* RE.png */,
+				D068390A1BC5B3EF00D50E3F /* s4.png */,
+				D068390B1BC5B3EF00D50E3F /* Samsung.png */,
+				D068390C1BC5B3EF00D50E3F /* tab.png */,
+				D068390D1BC5B3EF00D50E3F /* v10.png */,
 				48A656ED1816468000746D36 /* Sunflower.gif */,
 				48A656BC18163BF200746D36 /* NavCtrl-Info.plist */,
 				48A656BD18163BF200746D36 /* InfoPlist.strings */,
@@ -236,10 +296,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D068390E1BC5B3EF00D50E3F /* Apple.png in Resources */,
+				D06839181BC5B3EF00D50E3F /* note.png in Resources */,
 				48A656EE1816468000746D36 /* Sunflower.gif in Resources */,
+				D06839151BC5B3EF00D50E3F /* ipod.png in Resources */,
+				D068391A1BC5B3EF00D50E3F /* s4.png in Resources */,
+				D068391C1BC5B3EF00D50E3F /* tab.png in Resources */,
+				D068391D1BC5B3EF00D50E3F /* v10.png in Resources */,
 				48A656E718163C1B00746D36 /* qcdDemoViewController.xib in Resources */,
+				D06839171BC5B3EF00D50E3F /* nexus9.png in Resources */,
+				D06839121BC5B3EF00D50E3F /* HTC.png in Resources */,
+				D06839141BC5B3EF00D50E3F /* iphone.png in Resources */,
+				D06838DB1BC43FD900D50E3F /* WebViewController.xib in Resources */,
+				D068391B1BC5B3EF00D50E3F /* Samsung.png in Resources */,
 				48A656BF18163BF200746D36 /* InfoPlist.strings in Resources */,
+				D06839191BC5B3EF00D50E3F /* RE.png in Resources */,
+				D068390F1BC5B3EF00D50E3F /* g4.png in Resources */,
 				48A656C718163BF200746D36 /* Images.xcassets in Resources */,
+				D06839161BC5B3EF00D50E3F /* LG.png in Resources */,
+				D06839101BC5B3EF00D50E3F /* GPad.png in Resources */,
+				D06839111BC5B3EF00D50E3F /* HTC-One.png in Resources */,
+				D06839131BC5B3EF00D50E3F /* ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A656E618163C1B00746D36 /* qcdDemoViewController.m in Sources */,
+				D06838DA1BC43FD900D50E3F /* WebViewController.m in Sources */,
 				48A656C518163BF200746D36 /* qcdDemoAppDelegate.m in Sources */,
 				48A656C118163BF200746D36 /* main.m in Sources */,
 				48A656EB18163F8700746D36 /* ChildViewController.m in Sources */,

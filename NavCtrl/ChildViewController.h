@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ChildViewController : UITableViewController
-@property (nonatomic, retain) NSArray *products;
+//@property (nonatomic, retain) NSMutableArray *products;
+@property (nonatomic, retain) NSMutableArray *appleProducts;
+@property (nonatomic, retain) NSMutableArray *samsungProducts;
+@property (nonatomic, retain) NSMutableArray *lgProducts;
+@property (nonatomic, retain) NSMutableArray *htcProducts;
+@property (nonatomic, retain) NSMutableArray *products;
 @end
