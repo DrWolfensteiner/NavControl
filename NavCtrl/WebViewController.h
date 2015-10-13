@@ -10,10 +10,10 @@
 #import <WebKit/WebKit.h>
 
 @interface WebViewController : UIViewController
-@property (retain, nonatomic) IBOutlet UIWebView *productWebsite;
-@property (retain, nonatomic) NSURL *myURL;
+@property (strong, nonatomic) IBOutlet UIWebView *productWebsite;
+@property (strong, nonatomic) NSURL *myURL;
 -(void) setURL: (NSString *) url;
-@property (retain, nonatomic) WKWebView *wkWeb;
+@property (strong, nonatomic) WKWebView *wkWeb;
 
 
 @end

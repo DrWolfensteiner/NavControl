@@ -8,6 +8,8 @@
 
 #import "ChildViewController.h"
 #import "WebViewController.h"
+#import "Company.h"
+#import "Product.h"
 
 @interface ChildViewController ()
 
@@ -15,11 +17,11 @@
 
 @implementation ChildViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+    // Custom initialization
     }
     return self;
 }
@@ -33,41 +35,6 @@
     
     //Display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.appleProducts = [[NSMutableArray alloc]
-                          initWithObjects:    @"ipad.png",
-                          @"ipod.png",
-                          @"iphone.png", nil];
-    self.samsungProducts = [[NSMutableArray alloc]
-                            initWithObjects:    @"s4.png",
-                            @"note.png",
-                            @"tab.png", nil];
-    self.lgProducts = [[NSMutableArray alloc]
-                       initWithObjects:    @"gpad.png",
-                       @"v10.png",
-                       @"g4.png", nil];
-    self.htcProducts = [[NSMutableArray alloc]
-                        initWithObjects:    @"nexus9.png",
-                        @"HTC-One.png",
-                        @"RE.png", nil];
-    
-    if ([self.title isEqualToString:@"Apple mobile devices"]) {
-        self.products = [[NSMutableArray alloc ]
-                         initWithObjects:@"iPad", @"iPod Touch",@"iPhone", nil];
-    }
-    else if ([self.title isEqualToString:@"Samsung mobile devices"]) {
-        self.products = [[NSMutableArray alloc ]
-                         initWithObjects:@"Galaxy S4", @"Galaxy Note", @"Galaxy Tab", nil];
-    }
-    else if ([self.title isEqualToString:@"HTC mobile devices"]) {
-        self.products = [[NSMutableArray alloc ]
-                         initWithObjects:@"Nexus 9", @"One M9", @"RE Camera", nil];
-    }
-    else if ([self.title isEqualToString:@"LG mobile devices"]) {
-        self.products = [[NSMutableArray alloc ]
-                         initWithObjects:@"G Pad", @"V10", @"G4", nil];
-    }
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -94,27 +61,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    NSInteger count;
-    if ([self.title isEqualToString:@"Apple mobile devices"]) {
-        count = [self.appleProducts count];
-    }
-    else if ([self.title isEqualToString:@"Samsung mobile devices"]) {
-        count = [self.samsungProducts count];
-    }
-    else if ([self.title isEqualToString:@"HTC mobile devices"]) {
-        count = [self.htcProducts count];
-    }
-    else{
-        count = [self.lgProducts count];
-    }
     
-    
-    
-    
-    
-    return count;
+    return [self.products count];
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,24 +76,12 @@
     
     //Configure the cell...
     
-    cell.textLabel.text = [self.products objectAtIndex:
-                           [indexPath row]];
-    if ([self.title isEqualToString: @"Apple mobile devices"]){
-        cell.imageView.image = [UIImage imageNamed:[self.appleProducts objectAtIndex:
-                                                    [indexPath row]]];
-    }
-    else if ([self.title isEqualToString: @"Samsung mobile devices"]){
-        cell.imageView.image = [UIImage imageNamed:[self.samsungProducts objectAtIndex:
-                                                    [indexPath row]]];
-    }
-    else if ([self.title isEqualToString: @"LG mobile devices"]){
-        cell.imageView.image = [UIImage imageNamed:[self.lgProducts objectAtIndex:
-                                                    [indexPath row]]];
-    }
-    else if ([self.title isEqualToString: @"HTC mobile devices"]){
-        cell.imageView.image = [UIImage imageNamed:[self.htcProducts objectAtIndex:
-                                                    [indexPath row]]];
-    }
+    Product *productAtIndex = [self.company.products objectAtIndex: indexPath.row];;
+    
+    cell.textLabel.text = productAtIndex.productName;
+    
+    
+    cell.imageView.image = [UIImage imageNamed: productAtIndex.productLogo];
     
     return cell;
 }
@@ -161,24 +98,11 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        if ([self.title isEqualToString:@"Apple mobile devices"]) {
-            [self.products removeObjectAtIndex:indexPath.row];
-            [self.appleProducts removeObjectAtIndex:indexPath.row];
-        }
-        else if ([self.title isEqualToString:@"Samsung mobile devices"]) {
-            [self.products removeObjectAtIndex:indexPath.row];
-            [self.samsungProducts removeObjectAtIndex:indexPath.row];
-        }
-        else if ([self.title isEqualToString:@"LG mobile devices"]) {
-            [self.products removeObjectAtIndex:indexPath.row];
-            [self.lgProducts removeObjectAtIndex:indexPath.row];
-        }
-        else if ([self.title isEqualToString:@"HTC mobile devices"]) {
-            [self.products removeObjectAtIndex:indexPath.row];
-            [self.htcProducts removeObjectAtIndex:indexPath.row];
-        }
-        
         //Delete the row from the data source
+        
+        [self.products removeObjectAtIndex:indexPath.row];
+
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -216,59 +140,11 @@
     
     //Pass the selected object to the new view controller.
     
-    NSString *prod = [self.products objectAtIndex:indexPath.row];
-    
-    if ([self.title isEqualToString: @"Apple mobile devices"]){
-        
-        if ([prod isEqual: @"iPad"]) {
-            [detailViewController setURL: @"http://www.apple.com/ipad/"];
-        }
-        else if ([prod isEqual: @"iPod Touch"]) {
-            [detailViewController setURL: @"http://www.apple.com/ipod-touch/"];
-        }
-        else if ([prod isEqual: @"iPhone"]) {
-            [detailViewController setURL: @"http://www.apple.com/iphone/"];
-        }
-    }
-    if ([self.title isEqualToString: @"Samsung mobile devices"]){
-        
-        if ([prod isEqual: @"Galaxy S4"]) {
-            [detailViewController setURL: @"http://www.samsung.com/global/microsite/galaxys4/"];
-        }
-        else if ([prod isEqual: @"Galaxy Note"]) {
-            [detailViewController setURL: @"http://www.samsung.com/global/galaxy/galaxy-note5/"];
-        }
-        else if ([prod isEqual: @"Galaxy Tab"]) {
-            [detailViewController setURL: @"http://www.samsung.com/us/mobile/galaxy-tab/"];
-        }
-    }
-    if ([self.title isEqualToString: @"LG mobile devices"]){
-        
-        if ([prod isEqual: @"G Pad"]) {
-            [detailViewController setURL: @"http://www.lg.com/us/tablets"];
-        }
-        else if ([prod isEqual: @"V10"]) {
-            [detailViewController setURL: @"http://www.lg.com/us/mobile-phones/v10"];
-        }
-        else if ([prod isEqual: @"G4"]) {
-            [detailViewController setURL: @"http://www.lg.com/us/mobile-phones/g4"];
-        }
-    }
-    if ([self.title isEqualToString: @"HTC mobile devices"]){
-        
-        if ([prod isEqual: @"Nexus 9"]) {
-            [detailViewController setURL: @"http://www.htc.com/us/tablets/nexus-9/"];
-        }
-        else if ([prod isEqual: @"One M9"]) {
-            [detailViewController setURL: @"http://www.htc.com/us/smartphones/htc-one-m9/"];
-        }
-        else if ([prod isEqual: @"RE Camera"]) {
-            [detailViewController setURL: @"http://www.htc.com/us/re/re-camera/"];
-        }
-    }
-    
-    
+    Product *prod = [self.products objectAtIndex: indexPath.row];
+    [detailViewController setURL: [NSString stringWithFormat: @"%@", prod.productURL]];
+
     //Push the view controller.
+    
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

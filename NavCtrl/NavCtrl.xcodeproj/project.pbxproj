@@ -42,6 +42,9 @@
 		D068391B1BC5B3EF00D50E3F /* Samsung.png in Resources */ = {isa = PBXBuildFile; fileRef = D068390B1BC5B3EF00D50E3F /* Samsung.png */; };
 		D068391C1BC5B3EF00D50E3F /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = D068390C1BC5B3EF00D50E3F /* tab.png */; };
 		D068391D1BC5B3EF00D50E3F /* v10.png in Resources */ = {isa = PBXBuildFile; fileRef = D068390D1BC5B3EF00D50E3F /* v10.png */; };
+		D06839201BC5C28E00D50E3F /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = D068391F1BC5C28E00D50E3F /* Company.m */; };
+		D06839231BC5C2B800D50E3F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = D06839221BC5C2B800D50E3F /* Product.m */; };
+		D06839261BC5F67D00D50E3F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D06839251BC5F67D00D50E3F /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,12 @@
 		D068390B1BC5B3EF00D50E3F /* Samsung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Samsung.png; sourceTree = "<group>"; };
 		D068390C1BC5B3EF00D50E3F /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab.png; sourceTree = "<group>"; };
 		D068390D1BC5B3EF00D50E3F /* v10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v10.png; sourceTree = "<group>"; };
+		D068391E1BC5C28E00D50E3F /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		D068391F1BC5C28E00D50E3F /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		D06839211BC5C2B800D50E3F /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		D06839221BC5C2B800D50E3F /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		D06839241BC5F67D00D50E3F /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		D06839251BC5F67D00D50E3F /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +138,12 @@
 			children = (
 				48A656E318163C1B00746D36 /* qcdDemoViewController.h */,
 				48A656E418163C1B00746D36 /* qcdDemoViewController.m */,
+				D068391E1BC5C28E00D50E3F /* Company.h */,
+				D068391F1BC5C28E00D50E3F /* Company.m */,
+				D06839211BC5C2B800D50E3F /* Product.h */,
+				D06839221BC5C2B800D50E3F /* Product.m */,
+				D06839241BC5F67D00D50E3F /* DataManager.h */,
+				D06839251BC5F67D00D50E3F /* DataManager.m */,
 				D06838D71BC43FD900D50E3F /* WebViewController.h */,
 				D06838D81BC43FD900D50E3F /* WebViewController.m */,
 				D06838D91BC43FD900D50E3F /* WebViewController.xib */,
@@ -335,9 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06839231BC5C2B800D50E3F /* Product.m in Sources */,
 				48A656E618163C1B00746D36 /* qcdDemoViewController.m in Sources */,
+				D06839201BC5C28E00D50E3F /* Company.m in Sources */,
 				D06838DA1BC43FD900D50E3F /* WebViewController.m in Sources */,
 				48A656C518163BF200746D36 /* qcdDemoAppDelegate.m in Sources */,
+				D06839261BC5F67D00D50E3F /* DataManager.m in Sources */,
 				48A656C118163BF200746D36 /* main.m in Sources */,
 				48A656EB18163F8700746D36 /* ChildViewController.m in Sources */,
 			);
@@ -458,7 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NavCtrl/NavCtrl-Prefix.pch";
 				INFOPLIST_FILE = "NavCtrl/NavCtrl-Info.plist";
@@ -472,7 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NavCtrl/NavCtrl-Prefix.pch";
 				INFOPLIST_FILE = "NavCtrl/NavCtrl-Info.plist";

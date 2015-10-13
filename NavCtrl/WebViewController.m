@@ -43,10 +43,6 @@
 }
 */
 
-- (void)dealloc {
-    [_productWebsite release];
-    [super dealloc];
-}
 
 -(void) setURL: (NSString *) url {
     self.myURL = [NSURL URLWithString: url];

@@ -8,6 +8,9 @@
 
 #import "qcdDemoViewController.h"
 #import "ChildViewController.h"
+#import "Company.h"
+#import "Product.h"
+
 
 @interface qcdDemoViewController ()
 
@@ -15,7 +18,7 @@
 
 @implementation qcdDemoViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     
@@ -28,28 +31,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    static dispatch_once_t dispatch = 0;
+    dispatch_once (&dispatch, ^{
+        self.managerOfData = [[DataManager alloc] init];
+    });
     
-    self.companyList = [[NSMutableArray alloc]
-                       initWithObjects: @"Apple mobile devices",
-                                        @"Samsung mobile devices",
-                                        @"LG mobile devices",
-                                        @"HTC mobile devices", nil];
+    [self.managerOfData companyDetailCreator];
     
-    self.companyLogo = [[NSMutableArray alloc]
-                        initWithObjects:    @"Apple.png",
-                                            @"Samsung.png",
-                                            @"LG.png",
-                                            @"HTC.png", nil];
-    self.title = @"Mobile device makers";
+    self.companies = self.managerOfData.companies;
     
-    
+    self.title = @"Mobile Device Makers";
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +69,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.companyList count];
+    return self.companies.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,9 +82,13 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = [self.companyList objectAtIndex: [indexPath row]];
     
-    cell.imageView.image = [UIImage imageNamed:[self.companyLogo objectAtIndex: [indexPath row]]];
+    Company *companyAtIndex = [self.companies objectAtIndex: indexPath.row];;
+
+    cell.textLabel.text = companyAtIndex.name;
+
+    
+    cell.imageView.image = [UIImage imageNamed: companyAtIndex.logo];
                         
     
     return cell;
@@ -103,9 +105,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.companyList removeObjectAtIndex:indexPath.row];
-        [self.companyLogo removeObjectAtIndex:indexPath.row];
         // Delete the row from the data source
+
+        [self.companies removeObjectAtIndex:indexPath.row];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -117,6 +120,11 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    NSString *buffer = [self.companies objectAtIndex:fromIndexPath.row];
+    [self.companies removeObjectAtIndex:fromIndexPath.row];
+    [self.companies insertObject:buffer atIndex:toIndexPath.row];
+    [self.tableView reloadData];
+
 }
 
 
@@ -135,23 +143,15 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Company *companyAtIndex = [self.companies objectAtIndex: indexPath.row];
 
-    NSString *companyName = [self.companyList objectAtIndex: indexPath.row];
-
-//    if ([companyName isEqualToString:@"Apple mobile devices"])
-//    {
-//        self.childVC.title = @"Apple mobile devices";
-//    }
-//    else if ([companyName isEqualToString:@"Samsung mobile devices"]){
-//        self.childVC.title = @"Samsung mobile devices";
-//    }
-//    else if ([companyName isEqualToString:@"LG mobile devices"]){
-//        self.childVC.title = @"LG mobile devices";
-//    }
-//    else if ([companyName isEqualToString:@"HTC mobile devices"]){
-//        self.childVC.title = @"HTC mobile devices";
-//    }
-    self.childVC.title = companyName;
+    self.childVC.title = companyAtIndex.name;
+    
+    self.childVC.company = companyAtIndex;
+    
+    
+    
+    [self.childVC setProducts:companyAtIndex.products];
     
     [self.navigationController
      pushViewController:self.childVC
